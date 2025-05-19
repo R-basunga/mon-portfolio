@@ -120,8 +120,10 @@
 
   <section id="about">
     <h2 id="about-title">À propos de moi</h2>
-    <p id="about-text">Je suis un développeur passionné par la création de sites web modernes et efficaces.</p>
-    <a href="mon-cv.pdf" download class="download-cv" id="cv-button">Télécharger mon CV</a>
+    <p id="about-text-fr" class="lang-content lang-fr">Je m'appelle <strong>Jeremias BASUNGA L.</strong>, né le <strong>14 décembre 1999 à Luanda</strong>, en Angola. Passionné depuis toujours par la technologie et la créativité visuelle, j'ai obtenu une <strong>graduation en Sciences Informatiques, spécialité Techniques de Maintenance</strong>, à l'<strong>Université ISIPA</strong> de Kinshasa, en République Démocratique du Congo.<br><br>Fort d’un profil polyvalent, je suis également <strong>photographe professionnel</strong>, <strong>designer infographe</strong> et <strong>monteur vidéo</strong>, avec plusieurs années d’expérience dans le domaine de la création visuelle et audiovisuelle.<br><br>Actuellement, je poursuis une <strong>autoformation continue</strong> dans le développement web et mobile. Mon objectif est de devenir un <strong>développeur full stack</strong> et <strong>créateur d’applications mobiles</strong>, capable de concevoir des solutions digitales complètes, modernes et adaptées aux besoins des utilisateurs.</p>
+    <p id="about-text-pt" class="lang-content lang-pt" style="display:none;">Chamo-me <strong>Jeremias BASUNGA L.</strong>, nascido a <strong>14 de dezembro de 1999 em Luanda</strong>, Angola. Sempre fui apaixonado por tecnologia e criatividade visual. Sou <strong>graduado em Ciências Informáticas, com especialização em Técnicas de Manutenção</strong>, pela <strong>Universidade ISIPA</strong> em Kinshasa, República Democrática do Congo.<br><br>Tenho um perfil versátil: sou também <strong>fotógrafo profissional</strong>, <strong>designer gráfico</strong> e <strong>editor de vídeo</strong>, com vários anos de experiência na área da criação visual e audiovisual.<br><br>Atualmente, estou em processo de <strong>autoformação contínua</strong> para me tornar <strong>desenvolvedor web e criador de aplicações móveis</strong>. O meu objetivo é desenvolver soluções digitais modernas, eficazes e adaptadas às necessidades reais dos utilizadores.</p>
+    <p id="about-text-en" class="lang-content lang-en" style="display:none;">My name is <strong>Jeremias BASUNGA L.</strong>, born on <strong>December 14, 1999, in Luanda</strong>, Angola. I have always been passionate about technology and visual creativity. I hold a <strong>degree in Computer Science with a specialization in Maintenance Techniques</strong> from <strong>ISIPA University</strong> in Kinshasa, Democratic Republic of Congo.<br><br>With a versatile background, I am also a <strong>professional photographer</strong>, <strong>graphic designer</strong>, and <strong>video editor</strong>, with several years of experience in visual and audiovisual creation.<br><br>Currently, I am undergoing <strong>self-training to become a web developer and mobile application creator</strong>. My goal is to develop modern, effective digital solutions tailored to real user needs.</p>
+    <a href="Jeremias-basunga-CV.pdf" download class="download-cv" id="cv-button">Télécharger mon CV</a>
   </section>
 
   <section id="projects">
@@ -164,79 +166,55 @@
   </section>
 
   <footer>
-    <p id="footer-text">&copy; 2025 Mon Nom. Tous droits réservés.</p>
+    <p id="footer-text">&copy; 2025 Jeremias BASUNGA L. Tous droits réservés.</p>
   </footer>
 
   <script>
-    const translations = {
-      fr: {
-        title: "Mon Portfolio",
-        "nav-about": "À propos",
-        "nav-projects": "Projets",
-        "nav-contact": "Contact",
-        "nav-gallery": "Galerie",
-        "about-title": "À propos de moi",
-        "about-text": "Je suis un développeur passionné par la création de sites web modernes et efficaces.",
-        "projects-title": "Mes projets",
-        "proj1-title": "Site vitrine",
-        "proj1-desc": "Un site simple pour un client local.",
-        "proj2-title": "Gestionnaire de tâches",
-        "proj2-desc": "Application web avec JavaScript pur.",
-        "gallery-title": "Galerie",
-        "contact-title": "Contactez-moi",
-        "contact-button": "Envoyer",
-        "cv-button": "Télécharger mon CV",
-        "footer-text": "© 2025 Mon Nom. Tous droits réservés."
-      },
-      pt: {
-        title: "Meu Portfólio",
-        "nav-about": "Sobre",
-        "nav-projects": "Projetos",
-        "nav-contact": "Contato",
-        "nav-gallery": "Galeria",
-        "about-title": "Sobre mim",
-        "about-text": "Sou um desenvolvedor apaixonado pela criação de sites modernos e eficientes.",
-        "projects-title": "Meus projetos",
-        "proj1-title": "Site institucional",
-        "proj1-desc": "Um site simples para um cliente local.",
-        "proj2-title": "Gerenciador de tarefas",
-        "proj2-desc": "Aplicativo web feito com JavaScript puro.",
-        "gallery-title": "Galeria",
-        "contact-title": "Contate-me",
-        "contact-button": "Enviar",
-        "cv-button": "Baixar meu CV",
-        "footer-text": "© 2025 Meu Nome. Todos os direitos reservados."
-      },
-      en: {
-        title: "My Portfolio",
-        "nav-about": "About",
-        "nav-projects": "Projects",
-        "nav-contact": "Contact",
-        "nav-gallery": "Gallery",
-        "about-title": "About Me",
-        "about-text": "I am a developer passionate about building modern and effective websites.",
-        "projects-title": "My Projects",
-        "proj1-title": "Showcase Website",
-        "proj1-desc": "A simple site for a local client.",
-        "proj2-title": "Task Manager",
-        "proj2-desc": "Web app built with plain JavaScript.",
-        "gallery-title": "Gallery",
-        "contact-title": "Contact Me",
-        "contact-button": "Send",
-        "cv-button": "Download my CV",
-        "footer-text": "© 2025 My Name. All rights reserved."
-      }
-    };
-
     function changeLanguage(lang) {
-      const elements = translations[lang];
-      for (const id in elements) {
-        const el = document.getElementById(id);
-        if (el) el.textContent = elements[id];
-      }
-    }
+      // Afficher le contenu correspondant
+      document.querySelectorAll('.lang-content').forEach(el => el.style.display = 'none');
+      document.querySelectorAll('.lang-' + lang).forEach(el => el.style.display = 'block');
 
-    changeLanguage("fr");
+      // Mise à jour des textes
+      const translations = {
+        fr: {
+          title: "Mon Portfolio",
+          navAbout: "À propos",
+          navProjects: "Projets",
+          navGallery: "Galerie",
+          navContact: "Contact",
+          aboutTitle: "À propos de moi",
+          cvButton: "Télécharger mon CV"
+        },
+        pt: {
+          title: "Meu Portfólio",
+          navAbout: "Sobre",
+          navProjects: "Projetos",
+          navGallery: "Galeria",
+          navContact: "Contato",
+          aboutTitle: "Sobre mim",
+          cvButton: "Baixar meu CV"
+        },
+        en: {
+          title: "My Portfolio",
+          navAbout: "About",
+          navProjects: "Projects",
+          navGallery: "Gallery",
+          navContact: "Contact",
+          aboutTitle: "About Me",
+          cvButton: "Download my CV"
+        }
+      };
+
+      const t = translations[lang];
+      document.getElementById("title").textContent = t.title;
+      document.getElementById("nav-about").textContent = t.navAbout;
+      document.getElementById("nav-projects").textContent = t.navProjects;
+      document.getElementById("nav-gallery").textContent = t.navGallery;
+      document.getElementById("nav-contact").textContent = t.navContact;
+      document.getElementById("about-title").textContent = t.aboutTitle;
+      document.getElementById("cv-button").textContent = t.cvButton;
+    }
   </script>
 </body>
 </html>
